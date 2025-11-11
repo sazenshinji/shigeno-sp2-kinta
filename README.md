@@ -71,52 +71,6 @@ php artisan storage:link
 
 =================================================================================
 
-〇「Stripe」の導入について
-
-１．準備
-
-1.1 アカウントの準備と API キーの取得
-
-・Stripe アカウントを準備してください。
-
-・Stripe のダッシュボードで API キー（公開可能キー / 秘密キー）を取得してください。
-
-公開キー: pk_test_xxxxx
-
-秘密キー: sk_test_xxxxx
-
-1.2 Stripe のインストール と .env ファイルの編集
-
-・Laravel に Stripe をインストールしてください。
-
-bash
-
-composer require stripe/stripe-php
-
-・.env に 取得した API キーを追加します。
-
-STRIPE_KEY=pk_test_xxxxx
-
-STRIPE_SECRET=sk_test_xxxxx
-
-２．Stripe 決済 カード支払時の入力情報 例
-
-・メールアドレス：test@example.com
-
-・カード情報：4242 4242 4242 4242 将来の日付 任意の 3 桁
-
-・カード名義：Stripe Test
-
-３．Stripe 決済 コンビニ払い時の入力情報 例
-
-・メールアドレス：test@example.com
-
-・カード名義：Stripe Test
-
-・電話番号：(未入力)
-
-=================================================================================
-
 〇「PHPUnit による単体テスト」について
 
 １．準備
@@ -169,7 +123,7 @@ sudo chmod -R 777 \*
 
 「文頭部分の APP_ENV と APP_KEY」の変更
 
-----------------------------------------------------------------
+---
 
 APP_NAME=Laravel
 
@@ -177,23 +131,23 @@ APP_NAME=Laravel
 
 - APP_KEY=base64:vPtYQu63T1fmcyeBgEPd0fJ+jvmnzjYMaUf7d5iuB+c=
 
-+ APP_ENV=test
+* APP_ENV=test
 
-+ APP_KEY=
+* APP_KEY=
 
 APP_DEBUG=true
 
 APP_URL=http://localhost
 
-----------------------------------------------------------------
+---
 
 「データベースの接続情報」の変更
 
-----------------------------------------------------------------
+---
 
 - DB_CONNECTION=mysql
 
-+ DB_CONNECTION=mysql_test
+* DB_CONNECTION=mysql_test
 
 DB_HOST=mysql
 
@@ -205,13 +159,13 @@ DB_PORT=3306
 
 - DB_PASSWORD=laravel_pass
 
-+ DB_DATABASE=fleama_test
+* DB_DATABASE=fleama_test
 
-+ DB_USERNAME=root
+* DB_USERNAME=root
 
-+ DB_PASSWORD=root
+* DB_PASSWORD=root
 
-----------------------------------------------------------------
+---
 
 ・APP_KEY に新たなテスト用のアプリケーションキーを加える
 
