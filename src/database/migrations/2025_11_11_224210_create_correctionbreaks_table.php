@@ -11,8 +11,7 @@ class CreateCorrectionBreaksTable extends Migration
         Schema::create('correctionbreaks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('correction_id')->constrained('corrections')->cascadeOnDelete();
-            $table->dateTime('before_break_start')->nullable();
-            $table->dateTime('before_break_end')->nullable();
+            $table->tinyInteger('break_index');
             $table->dateTime('after_break_start');
             $table->dateTime('after_break_end');
             $table->timestamps();
