@@ -11,42 +11,19 @@ class BeforeCorrectionsTableSeeder extends Seeder
     public function run()
     {
         //----2025年11月5日(水)----
-        $param = [
-            'correction_id'    => 1,
-            'work_date'  => '2025-11-5',
-            'before_clock_in'   => Carbon::create(2025, 11, 5, 9, 0, 0),
-            'before_clock_out'  => Carbon::create(2025, 11, 5, 18, 0, 0),
-            'created_at' => now(),
-            'updated_at' => now(),
-        ];
-        DB::table('beforecorrections')->insert($param);
+        //　承認待ちのためレコードはない。
 
         //----2025年11月8日(土)----
-        $param = [
-            'correction_id'    => 2,
-            'work_date'  => '2025-11-8',
-            'before_clock_in'   => null,
-            'before_clock_out'  => null,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ];
-        DB::table('beforecorrections')->insert($param);
+        //　承認待ちのためレコードはない。
 
         //----2025年12月1日(月)----
-        $param = [
-            'correction_id'    => 3,
-            'work_date'  => '2025-12-1',
-            'before_clock_in'   => Carbon::create(2025, 12, 1, 9, 0, 0),
-            'before_clock_out'  => Carbon::create(2025, 12, 1, 18, 0, 0),
-            'created_at' => now(),
-            'updated_at' => now(),
-        ];
-        DB::table('beforecorrections')->insert($param);
+        //　承認待ちのためレコードはない。
 
+        
         //----2025年12月2日(火)----
         $param = [
             'correction_id'    => 4,
-            'work_date'  => '2025-12-2',
+            'before_work_date'  => '2025-12-2',
             'before_clock_in'   => Carbon::create(2025, 12, 2, 9, 0, 0),
             'before_clock_out'  => Carbon::create(2025, 12, 2, 18, 0, 0),
             'created_at' => now(),

@@ -4,11 +4,31 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AttendanceController;
 use Illuminate\Support\Facades\Auth;
 
-Route::redirect('/', '/attendance');
+/*
+|--------------------------------------------------------------------------
+| 1. トップページアクセス時は必ずログアウトしてログイン画面へ
+|--------------------------------------------------------------------------
+*/
 
-Route::get('/attendance', [AttendanceController::class, 'index']);
+Route::get('/', function () {
+    Auth::logout();
+    return redirect('/login');
+});
 
+/*
+|--------------------------------------------------------------------------
+| 2. 勤怠トップページ（ログイン後に表示）
+|--------------------------------------------------------------------------
+*/
+Route::get('/attendance', [AttendanceController::class, 'index'])
+    ->middleware('auth');  // ← 必要に応じてログイン必須にする
+
+/*
+|--------------------------------------------------------------------------
+| 3. ログアウトボタンからのログアウト処理
+|--------------------------------------------------------------------------
+*/
 Route::post('/logout', function () {
     Auth::logout();
-    return redirect('/login');   // ← login画面へ遷移
+    return redirect('/login');
 })->name('logout');

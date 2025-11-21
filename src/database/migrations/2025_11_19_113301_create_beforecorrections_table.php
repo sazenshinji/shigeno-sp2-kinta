@@ -11,7 +11,7 @@ class CreateBeforecorrectionsTable extends Migration
         Schema::create('beforecorrections', function (Blueprint $table) {
             $table->id();
             $table->foreignId('correction_id')->constrained()->cascadeOnDelete();
-            $table->date('work_date')->nullable();
+            $table->date('before_work_date')->nullable();
             $table->dateTime('before_clock_in')->nullable();
             $table->dateTime('before_clock_out')->nullable();
             $table->timestamps();

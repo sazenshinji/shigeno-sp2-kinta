@@ -17,7 +17,7 @@ class CorrectionsTableSeeder extends Seeder
             'type' => 1,               // 種別: 1=修正
             'reason' => '間違い修正',   // 申請理由
             'status' => 0,             // 0:申請中
-            'work_date'  => '2025-11-5',
+            'after_work_date'  => '2025-11-5',
             'after_clock_in'   => Carbon::create(2025, 11, 5, 7, 30, 0),
             'after_clock_out'  => Carbon::create(2025, 11, 5, 16, 45, 0),
             'created_at' => now(),
@@ -31,7 +31,7 @@ class CorrectionsTableSeeder extends Seeder
             'type' => 0,                   // 種別: 0=新規追加
             'reason' => '後日入力',         // 申請理由
             'status' => 0,                 // 0:申請中
-            'work_date'  => '2025-11-8',
+            'after_work_date'  => '2025-11-8',
             'after_clock_in'   => Carbon::create(2025, 11, 8, 10, 30, 0),
             'after_clock_out'  => Carbon::create(2025, 11, 8, 17, 45, 0),
             'created_at' => now(),
@@ -45,7 +45,7 @@ class CorrectionsTableSeeder extends Seeder
             'type' => 2,               // 種別: 2=削除
             'reason' => '入力ミス',     // 申請理由
             'status' => 0,             // 0:申請中
-            'work_date'  => '2025-12-1',
+            'after_work_date'  => '2025-12-1',
             'after_clock_in'   => null,
             'after_clock_out'  => null,
             'created_at' => now(),
@@ -59,7 +59,7 @@ class CorrectionsTableSeeder extends Seeder
             'type' => 1,                       // 種別: 1=修正
             'reason' => '修正(代：長嶋茂雄)',   // 申請理由
             'status' => 1,                     // 1:承認済
-            'work_date'  => '2025-12-2',
+            'after_work_date'  => '2025-12-2',
             'after_clock_in'   => Carbon::create(2025, 12, 2, 7, 0, 0),
             'after_clock_out'  => Carbon::create(2025, 12, 2, 21, 0, 0),
             'created_at' => now(),

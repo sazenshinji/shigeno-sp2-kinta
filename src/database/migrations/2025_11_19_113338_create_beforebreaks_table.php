@@ -12,7 +12,7 @@ class CreateBeforebreaksTable extends Migration
             $table->id();
             $table->foreignId('beforecorrection_id')->constrained()->cascadeOnDelete();
             $table->tinyInteger('break_index');
-            $table->dateTime('before_break_start')->nullable();
+            $table->dateTime('before_break_start');
             $table->dateTime('before_break_end')->nullable();
             $table->timestamps();
         });
